@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Practicals - Java Code Reference</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f4f6f8; color: #202124; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+        header { margin-bottom: 20px; }
+        h1 { margin: 0 0 12px; font-size: 2.1rem; }
+        p { margin: 0 0 12px; }
+        .toc { background: #fff; border: 1px solid #d8dee4; border-radius: 10px; padding: 16px; margin-bottom: 24px; }
+        .toc h2 { margin-top: 0; font-size: 1rem; }
+        .toc ul { list-style: none; margin: 0; padding: 0; }
+        .toc li { margin: 8px 0; }
+        .toc a { color: #065fd4; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        section { margin-bottom: 32px; }
+        h2 { margin-bottom: 12px; font-size: 1.4rem; border-bottom: 1px solid #d8dee4; padding-bottom: 0.35rem; }
+        pre { background: #151515; color: #f8f8f2; padding: 18px; border-radius: 10px; overflow-x: auto; line-height: 1.5; font-size: 0.95rem; }
+        code { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; white-space: pre; }
+        .note { background: #eef4ff; border-left: 4px solid #6b9cff; padding: 14px 16px; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OOP Practical Java Codes</h1>
+            <p>Clean, easy-to-copy Java code examples for all practical assignments. Scroll to any section and copy the code block directly.</p>
+        </header>
+        <div class="note">Use the code blocks below to copy the exact Java programs with indentation preserved.</div>
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#assignment-1">Assignment No. 1 - Simple Java Calculator Program</a></li>
+                <li><a href="#assignment-2">Assignment No. 2 - E commerce order processing</a></li>
+                <li><a href="#assignment-3">Assignment No. 3 -Method Overloading for power and absolute function in java</a></li>
+                <li><a href="#assignment-4">Assignment No. 4 - Array Operations in java</a></li>
+                <li><a href="#assignment-5">Assignment No. 5 - Single Inheritance in Java</a></li>
+                <li><a href="#assignment-6">Assignment No. 6 - Interface In Java</a></li>
+                <li><a href="#assignment-7">Assignment No. 7 - ATM machine</a></li>
+                <li><a href="#assignment-8">Assignment No. 8.1 - Multithreaded Chat system in java</a></li>
+                <li><a href="#assignment-9">Assignment No. 8.2 - Abstract class</a></li>
+                <li><a href="#assignment-10">Assignment No. 9 - Employee Management</a></li>
+                <li><a href="#assignment-11">Assignment No. 10 - Student Management</a></li>
+            </ul>
+        </nav>
+        <section id="assignment-1">
+            <h2>Assignment No. 1 - Simple Java Calculator Program</h2>
+            <pre><code>
+
+
+import java.util.*;
+
+
+// import Assignment1;
+
+
+public class Assignment1 {
+    void Add(int a, int b) {
+        int c = a + b;
+        System.out.println(&quot;Addition : &quot; + c);
+    }
+
+
+    void Sub(int a, int b) {
+        int c = a - b;
+        System.out.println(&quot;Subtraction : &quot; + c);
+    }
+
+
+    void Mult(int a, int b) {
+        int c = a * b;
+        System.out.println(&quot;Multiplication : &quot; + c);
+    }
+
+
+    void Div(int a, int b) {
+        try {
+            int c = a / b;
+            System.out.println(&quot;Division : &quot; + c);
+        } catch (ArithmeticException e) {
+            System.out.println(&quot;Division by zero is not allowed!!&quot;);
+        }
+    }
+
+
+    void Mod(int a, int b) {
+        try {
+            int c = a % b;
+            System.out.println(&quot;Modulus : &quot; + c);
+        } catch (ArithmeticException e) {
+            System.out.println(&quot;Modulus by zero is not allowed!!&quot;);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println(&quot;Enter First Number : &quot;);
+        int a = sc.nextInt();
+        System.out.println(&quot;Enter Second Number : &quot;);
+        int b = sc.nextInt();
+        sc.nextLine(); // Consume the newline after nextInt()
+
+
+        Assignment1 obj = new Assignment1();
+
+
+        do {
+            System.out.println(&quot;\n------Menu------\n&quot;);
+            System.out.println(
+                    &quot;Enter your choice  \n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.modulus\n6.Exit&quot;);
+
+
+            int ch = sc.nextInt();
+            sc.nextLine();
+
+
+            switch (ch) {
+                case 1:
+                    obj.Add(a, b);
+                    break;
+
+
+                case 2:
+                    obj.Sub(a, b);
+                    break;
+
+
+                case 3:
+                    obj.Mult(a, b);
+                    break;
+
+
+                case 4:
+                    obj.Div(a, b);
+                    break;
+
+
+                case 5:
+                    obj.Mod(a, b);
+                    break;
+
+
+                case 6:
+                    System.out.println(&quot;Exiting the program!!!&quot;);
+                    sc.close();
+                    System.exit(0);
+
+
+                default:
+                    System.out.println(&quot;Invalid Input!!&quot;);
+            }
+        } while (true);
+
+
+    }
+
+
+}
+            </code></pre>
+        </section>
+        <section id="assignment-2">
+            <h2>Assignment No. 2 - E commerce order processing</h2>
+            <pre><code>
+
+
+
+
+import java.util.*;
+
+
+class Ecommerce {
+    String name;
+    double cost;
+    int quantity;
+
+
+    Ecommerce() {
+        this.name = &quot;Pen&quot;;
+        this.cost = 20;
+        this.quantity = 5;
+    }
+
+
+    Ecommerce(String name, double cost) {
+        this.name = name;
+        this.cost = cost;
+        this.quantity = 5;
+
+
+    }
+
+
+    Ecommerce(String name, double cost, int quantity) {
+        this.name = name;
+        this.cost = cost;
+        this.quantity = quantity;
+    }
+
+
+    double getTotal() {
+        return cost * quantity;
+    }
+}
+
+
+public class Assignment2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        Ecommerce p1 = new Ecommerce();
+
+
+        Ecommerce p2 = new Ecommerce(&quot;Book&quot;, 500);
+
+
+        Ecommerce p3 = new Ecommerce(&quot;Pencil&quot;, 50, 10);
+
+
+        // User input
+        System.out.print(&quot;Enter the name of the item : &quot;);
+        String name = sc.nextLine();
+
+
+        System.out.print(&quot;Enter the cost of the item : &quot;);
+        double cost = sc.nextDouble();
+
+
+        System.out.print(&quot;Enter the quantity of the item : &quot;);
+        int quantity = sc.nextInt();
+
+
+        Ecommerce p4 = new Ecommerce(name, cost, quantity);
+
+
+        System.out.println(&quot;\n--------------------Invoice--------------------\n&quot;);
+        System.out.printf(&quot;%-20s %-10s %-10s %-10s\n&quot;, &quot;Name&quot;, &quot;Cost&quot;, &quot;Quantity&quot;, &quot;Total&quot;);
+
+
+        System.out.printf(&quot;%-20s %-10.2f %-10d %-10.2f\n&quot;, p1.name, p1.cost, p1.quantity, p1.getTotal());
+
+
+        System.out.printf(&quot;%-20s %-10.2f %-10d %-10.2f\n&quot;, p2.name, p2.cost, p2.quantity, p2.getTotal());
+
+
+        System.out.printf(&quot;%-20s %-10.2f %-10d %-10.2f\n&quot;, p3.name, p3.cost, p3.quantity, p3.getTotal());
+
+
+        System.out.printf(&quot;%-20s %-10.2f %-10d %-10.2f\n&quot;, p4.name, p4.cost, p4.quantity, p4.getTotal());
+        System.out.println(&quot;\n-----------------------------------------------\n&quot;);
+
+
+        double subTotal = p1.getTotal() + p2.getTotal() + p3.getTotal() + p4.getTotal();
+
+
+        System.out.println(&quot;Your total Bill is : &quot; + subTotal);
+
+
+        double discount = 0;
+
+
+        if (subTotal &gt; 5000) {
+            System.out.println(&quot;Discount of 20% is applied&quot;);
+            discount = subTotal * 0.20;
+            System.out.println(&quot;Amount to pay is : &quot; + (subTotal - discount));
+        }
+
+
+        else if (subTotal &gt;= 3000 &amp;&amp; subTotal &lt; 5000) {
+            System.out.println(&quot;Discount of 10% is applied&quot;);
+            discount = subTotal * 0.10;
+            System.out.println(&quot;Amount to pay is : &quot; + (subTotal - discount));
+        }
+
+
+        else {
+            System.out.println(&quot;NO DISCOUNT APPLIED&quot;);
+            System.out.println(&quot;Discounted Amount to pay is : &quot; + subTotal);
+        }
+
+
+        System.out.println(&quot;\n===============THANKYOU VISIT AGAIN===============\n&quot;);
+
+
+        sc.close();
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-3">
+            <h2>Assignment No. 3 -Method Overloading for power and absolute function in java</h2>
+            <pre><code>
+
+
+import java.util.*;
+// import java.math.*;
+
+
+// import Calculate;
+
+
+class Calculate {
+
+
+    public int power(int base, int exponent) {
+        return (int) Math.pow(base, exponent);
+
+
+    }
+
+
+    public double power(double base, int exponent) {
+        return Math.pow(base, exponent);
+    }
+
+
+    public int absolute(int a) {
+        return Math.abs(a);
+    }
+
+
+    public double absolute(double a) {
+        return Math.abs(a);
+    }
+}
+
+
+public class Assignment3 {
+    public static void main(String[] args) {
+        Calculate c = new Calculate();
+
+
+        Scanner sc = new Scanner(System.in);
+
+
+        mainLoop: while (true) {
+            System.out.println(&quot;\n----------------Menu----------------\n&quot;);
+            System.out.println(
+                    &quot;1.Calculate Power of Integer\n2.Calculate Power of Decimal\n3.Calculate Absolute of Integer\n4.Calculate Absolute of Decimal\n5.Exit&quot;);
+            System.out.println(&quot;\n------------------------------------\n&quot;);
+            System.out.print(&quot;Enter your Choice : &quot;);
+            int ch = sc.nextInt();
+
+
+            switch (ch) {
+                case 1:
+                    System.out.print(&quot;Enter Base (int): &quot;);
+                    int a = sc.nextInt();
+                    System.out.print(&quot;Enter Exponent: &quot;);
+                    int b = sc.nextInt();
+                    System.out.println(a + &quot;^&quot; + b + &quot; = &quot; + c.power(a, b));
+                    break;
+
+
+                case 2:
+                    System.out.print(&quot;Enter Base: &quot;);
+                    double f = sc.nextDouble();
+                    System.out.print(&quot;Enter Exponent: &quot;);
+                    int g = sc.nextInt();
+                    System.out.println(f + &quot;^&quot; + g + &quot; = &quot; + c.power(f, g));
+                    break;
+
+
+                case 3:
+                    System.out.println(&quot;Enter the Integer to calculate Absolute : &quot;);
+                    int p = sc.nextInt();
+                    System.out.println(&quot;Absolute of &quot; + p + &quot; is &quot; + c.absolute(p));
+                    break;
+
+
+                case 4:
+                    System.out.println(&quot;Enter the Decimal to calculate Absolute : &quot;);
+                    double q = sc.nextDouble();
+                    System.out.println(&quot;Absolute of &quot; + q + &quot; is &quot; + c.absolute(q));
+                    break;
+
+
+                case 5:
+                    System.out.println(&quot;(: Exiting the program :)&quot;);
+                    break mainLoop;
+
+
+                default:
+                    System.out.println(&quot;!!!The user input is Invalid!!!&quot;);
+            }
+        }
+        sc.close();
+    }
+
+
+}
+            </code></pre>
+        </section>
+        <section id="assignment-4">
+            <h2>Assignment No. 4 - Array Operations in java</h2>
+            <pre><code>
+
+
+import java.util.*;
+
+
+class ArrayOp {
+    // Display the array
+    void display(int[] arr) {
+        for (int i = 0; i &lt; arr.length; i++) {
+            System.out.println(&quot;arr[&quot; + i + &quot;] = &quot; + arr[i]);
+        }
+    }
+
+
+    // Calculate the sum of elements in the array and average
+    void sum(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i &lt; arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        System.out.println(&quot;Sum of all the elements in the array is: &quot; + sum);
+        int average = sum / arr.length;
+        System.out.println(&quot;Average of elements in the array is: &quot; + average);
+    }
+
+
+    // Find the maximum element in the array
+    void maximum(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i &lt; arr.length; i++) {
+            if (max &lt; arr[i]) {
+                max = arr[i];
+            }
+        }
+        System.out.println(&quot;Maximum: &quot; + max);
+    }
+
+
+    // find minimum element
+    void minimum(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i &lt; arr.length; i++) {
+            if (min &gt; arr[i]) {
+                min = arr[i];
+            }
+        }
+        System.out.println(&quot;Minimum: &quot; + min);
+    }
+
+
+    // Search an element
+    void linearSearch(int[] arr, int key) {
+        for (int i = 0; i &lt; arr.length; i++) {
+            if (key == arr[i]) {
+                System.out.println(&quot;Element found at index : &quot; + i);
+            }
+        }
+    }
+
+
+}
+
+
+public class Assignment4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println(&quot;Enter the Size of Array: &quot;);
+        int size = sc.nextInt();
+        System.out.println(&quot;Enter the elements in the Array: &quot;);
+        int[] arr = new int[size];
+
+
+        for (int i = 0; i &lt; arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+
+        ArrayOp obj = new ArrayOp();
+
+
+        mainLoop: while (true) {
+
+
+            System.out.println(&quot;\n----------------Menu----------------\n&quot;);
+            System.out.println(
+                    &quot;1.Display Array\n2.Calculate Sum &amp; Average\n3.Find Maximum\n4.Find Minimum\n5.Search an Element\n6.Exit&quot;);
+            System.out.println(&quot;\n------------------------------------\n&quot;);
+            System.out.print(&quot;Enter Your Choice: &quot;);
+            int ch = sc.nextInt();
+
+
+            switch (ch) {
+                case 1 -&gt; {
+                    obj.display(arr);
+                }
+
+
+                case 2 -&gt; {
+                    obj.sum(arr);
+                }
+
+
+                case 3 -&gt; {
+                    obj.maximum(arr);
+                }
+
+
+                case 4 -&gt; {
+                    obj.minimum(arr);
+                }
+
+
+                case 5 -&gt; {
+                    System.out.print(&quot;Enter the key to search in the array: &quot;);
+                    int key = sc.nextInt();
+                    obj.linearSearch(arr, key);
+                }
+
+
+                case 6 -&gt; {
+                    System.out.println(&quot;(: Exiting the Program :)&quot;);
+                    break mainLoop;
+                }
+
+
+                default -&gt; {
+                    System.out.println(&quot;Invalid input!!&quot;);
+                }
+            }
+        }
+        sc.close();
+    }
+
+
+}
+            </code></pre>
+        </section>
+        <section id="assignment-5">
+            <h2>Assignment No. 5 - Single Inheritance in Java</h2>
+            <pre><code>
+
+
+import java.util.*;
+
+
+class Shape {
+    public int area(int length, int breadth) {
+        return length * breadth;
+    }
+
+
+    static void print() {
+        System.out.println(&quot;This is the Main shape class&quot;);
+    }
+}
+
+
+class Rectangle extends Shape {
+    public Rectangle(int length, int breadth) {
+        int result = area(length, breadth);
+        System.out.println(&quot;Area is : &quot; + result + &quot; cm²&quot;);
+    }
+
+
+    static void print1() {
+        System.out.println(&quot;This is the rectangle class&quot;);
+    }
+}
+
+
+public class Assignment5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;Enter the length(in cm) : &quot;);
+        int length = sc.nextInt();
+        System.out.print(&quot;Enter the length(in cm) : &quot;);
+        int breadth = sc.nextInt();
+
+
+        Rectangle r = new Rectangle(length, breadth);
+
+
+        Rectangle.print();
+        Rectangle.print1();
+
+
+        sc.close();
+
+
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-6">
+            <h2>Assignment No. 6 - Interface In Java</h2>
+            <pre><code>
+package Assignments;
+
+
+import java.util.Scanner;
+
+
+interface Interest {
+    double calculate(double p, double r, double t);
+}
+
+
+class SimpleInterest implements Interest {
+    public double calculate(double p, double r, double t) {
+        return (p * r * t) / 100;
+    }
+}
+
+
+class CompoundInterest implements Interest {
+    public double calculate(double p, double r, double t) {
+        return p * Math.pow((1 + r / 100), t) - p;
+    }
+}
+
+
+public class Assignment6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.print(&quot;Enter Principal: &quot;);
+        double p = sc.nextDouble();
+
+
+        System.out.print(&quot;Enter Rate: &quot;);
+        double r = sc.nextDouble();
+
+
+        System.out.print(&quot;Enter Time: &quot;);
+        double t = sc.nextDouble();
+
+
+        Interest si = new SimpleInterest();
+        Interest ci = new CompoundInterest();
+
+
+        System.out.println(&quot;Simple Interest: &quot; + si.calculate(p, r, t));
+        System.out.println(&quot;Compound Interest: &quot; + ci.calculate(p, r, t));
+
+
+        sc.close();
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-7">
+            <h2>Assignment No. 7 - ATM machine</h2>
+            <pre><code>
+
+
+import java.util.*;
+
+
+class ATM {
+    public static double balance = 50000;
+    public static int pass = 1234;
+
+
+    static void checkBalance(int pin) {
+        if (pass == pin) {
+            System.out.println(&quot;Balance: &quot; + balance + &quot; ₹\n&quot;);
+        } else {
+            System.out.println(&quot;Incorrect PIN\n&quot;);
+        }
+    }
+
+
+    static void withdraw(int pin, double amount) {
+        if (pass != pin) {
+            System.out.println(&quot;Incorrect PIN\n&quot;);
+            return;
+        }
+
+
+        if (amount &lt;= 0) {
+            System.out.println(&quot;Enter valid withdrawal amount\n&quot;);
+            return;
+        }
+
+
+        if (amount &gt; balance) {
+            System.out.println(&quot;Insufficient Balance\n&quot;);
+            return;
+        }
+
+
+        balance = balance - amount;
+        System.out.println(amount + &quot; ₹ Deducted from the account\n&quot;);
+    }
+
+
+    static void deposite(int pin, double amount) {
+        if (pass != pin) {
+            System.out.println(&quot;Incorrect PIN\n&quot;);
+            return;
+        }
+
+
+        if (amount &lt;= 0) {
+            System.out.println(&quot;Enter valid deposit amount\n&quot;);
+            return;
+        }
+
+
+        balance = balance + amount;
+        System.out.println(amount + &quot; ₹ Deposited in the account\n&quot;);
+    }
+}
+
+
+public class Assignment7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int pin;
+
+
+        mainloop: while (true) {
+            System.out.println(&quot;------------A T M------------&quot;);
+            System.out.println(&quot;1.Check Balance\n2.Withdraw\n3.Deposite\n4.Exit&quot;);
+
+
+            try {
+                System.out.print(&quot;Enter your choice : &quot;);
+                int ch = sc.nextInt();
+
+
+                switch (ch) {
+
+
+                    case 1 -&gt; {
+                        System.out.print(&quot;Enter your Pin : &quot;);
+                        pin = sc.nextInt();
+                        ATM.checkBalance(pin);
+                    }
+
+
+                    case 2 -&gt; {
+                        System.out.print(&quot;Enter your Pin : &quot;);
+                        pin = sc.nextInt();
+                        System.out.print(&quot;Enter amount to Withdraw : &quot;);
+                        double amount = sc.nextDouble();
+                        ATM.withdraw(pin, amount);
+                    }
+
+
+                    case 3 -&gt; {
+                        System.out.print(&quot;Enter your Pin : &quot;);
+                        pin = sc.nextInt();
+                        System.out.print(&quot;Enter amount to Deposit : &quot;);
+                        double amount = sc.nextDouble();
+                        ATM.deposite(pin, amount);
+                    }
+
+
+                    case 4 -&gt; {
+                        System.out.println(&quot;(: Thankyou :)&quot;);
+                        break mainloop;
+                    }
+
+
+                    default -&gt; System.out.println(&quot;Invalid Choice\n&quot;);
+                }
+
+
+            } catch (InputMismatchException e) {
+                System.out.println(&quot;Invalid input! Please enter numbers only.\n&quot;);
+                sc.nextLine();
+            }
+        }
+
+
+        sc.close();
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-8">
+            <h2>Assignment No. 8.1 - Multithreaded Chat system in java</h2>
+            <pre><code>
+public class Assignment8 {
+    static class ChatUser extends Thread {
+        private String userName;
+
+
+        public ChatUser(String name, int priority) {
+            this.userName = name;
+            setName(name); // Assign thread name
+            setPriority(priority); // Assign priority
+        }
+
+
+        public void run() {
+            try {
+                for (int i = 1; i &lt; 3; i++) {
+                    System.out.println(getName() + &quot; is sending message &quot; + i);
+                    Thread.sleep(500);
+
+
+                    System.out.println(getName() + &quot; received reply &quot; + i);
+                    Thread.sleep(500);
+                }
+            } catch (InterruptedException e) {
+                System.out.println(getName() + &quot; interrupted&quot;);
+            }
+        }
+    }
+
+
+    public static class ChatApp {
+        public static void main(String[] args) {
+            ChatUser user1 = new ChatUser(&quot;Alice&quot;, Thread.MAX_PRIORITY);
+            ChatUser user2 = new ChatUser(&quot;Bob&quot;, Thread.MIN_PRIORITY);
+
+
+            // Start threads
+            user1.start();
+            user2.start();
+
+
+            // 4. Check thread status
+            System.out.println(&quot;Is Alice alive? &quot; + user1.isAlive());
+            System.out.println(&quot;Is Bob alive? &quot; + user2.isAlive());
+
+
+            try {
+                // 5. Synchronize using join()
+                user1.join(); // main waits for Alice
+                user2.join(); // then waits for Bob
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
+            System.out.println(&quot;Both chats finished&quot;);
+
+
+            // 6. Demonstration of interruption instead of deprecated stop/suspend/resume
+            try {
+                ChatUser user3 = new ChatUser(&quot;Charlie&quot;, Thread.NORM_PRIORITY);
+                user3.start();
+
+
+                Thread.sleep(1000);
+
+
+                user3.interrupt();
+                System.out.println(&quot;Charlie interrupted&quot;);
+
+
+                user3.join();
+                System.out.println(&quot;Charlie finished&quot;);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-9">
+            <h2>Assignment No. 8.2 - Abstract class</h2>
+            <pre><code>
+abstract class Animal {
+    abstract void sound();
+}
+
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println(&quot;Dog barks&quot;);
+    }
+}
+
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println(&quot;Cat meows&quot;);
+    }
+}
+
+
+class Cow extends Animal {
+    void sound() {
+        System.out.println(&quot;Cow moos&quot;);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog();
+        Animal a2 = new Cat();
+        Animal a3 = new Cow();
+
+
+        a1.sound();
+        a2.sound();
+        a3.sound();
+    }
+}
+            </code></pre>
+        </section>
+        <section id="assignment-10">
+            <h2>Assignment No. 9 - Employee Management</h2>
+            <pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        String url = &quot;jdbc:mysql://localhost:3306/Assignment9&quot;;
+        String user = &quot;root&quot;;
+        String password = &quot;sohams@2006&quot;;
+
+
+        try {
+            // Connect to MySQL server
+            Connection con = DriverManager.getConnection(url, user, password);
+            mainloop: while (true) {
+                System.out.println(&quot;\n-----------Menu-----------\n&quot;);
+                System.out.println(
+                        &quot;1.Insert Employee Record\n2.Update Employee Record\n3.Delete Employee Record\n4.View Records\n5.Exit&quot;);
+                System.out.print(&quot;Enter Your Your Choice : &quot;);
+                int ch = sc.nextInt();
+
+
+                switch (ch) {
+                    case 1 -&gt; {
+                        // Insert Employee Records
+                        System.out.print(&quot;Enter Employee ID : &quot;);
+                        int id = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print(&quot;Enter Employee Name : &quot;);
+                        String name = sc.nextLine();
+                        System.out.print(&quot;Enter Employee E-Mail : &quot;);
+                        String email = sc.nextLine();
+                        System.out.print(&quot;Enter Department Name : &quot;);
+                        String dept = sc.nextLine();
+                        System.out.print(&quot;Enter Salary : &quot;);
+                        double salary = sc.nextDouble();
+
+
+                        String insertQuery = &quot;insert into Employee1(id,name,email,dept,salary) values (?,?,?,?,?)&quot;;
+                        PreparedStatement ps1 = con.prepareStatement(insertQuery);
+
+
+                        ps1.setInt(1, id);
+                        ps1.setString(2, name);
+                        ps1.setString(3, email);
+                        ps1.setString(4, dept);
+                        ps1.setDouble(5, salary);
+
+
+                        ps1.executeUpdate();
+
+
+                        System.out.println(&quot;Record Inserted Successfully&quot;);
+                    }
+
+
+                    case 2 -&gt; {
+                        // Update Employee Record
+                        System.out.print(&quot;Enter Employee ID to update : &quot;);
+                        int newID = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print(&quot;Enter New Name : &quot;);
+                        String name = sc.nextLine();
+                        System.out.print(&quot;Enter New Email : &quot;);
+                        String email = sc.nextLine();
+                        System.out.print(&quot;Enter New Department : &quot;);
+                        String dept = sc.nextLine();
+                        System.out.print(&quot;Enter New Salary : &quot;);
+                        double salary = sc.nextDouble();
+
+
+                        String updateQuery = &quot;update Employee1 set name = ?,email = ?, dept = ?, salary = ? where id = ?&quot;;
+                        PreparedStatement ps2 = con.prepareStatement(updateQuery);
+
+
+                        ps2.setString(1, name);
+                        ps2.setString(2, email);
+                        ps2.setString(3, dept);
+                        ps2.setDouble(4, salary);
+                        ps2.setInt(5, newID);
+
+
+                        ps2.executeUpdate();
+
+
+                        System.out.println(&quot;Record Updated Successfully&quot;);
+                    }
+
+
+                    case 3 -&gt; {
+                        // Delete Employee Record
+                        System.out.print(&quot;Enter Employee ID to Delete : &quot;);
+                        int id = sc.nextInt();
+                        sc.nextLine();
+
+
+                        String deleteQuery = &quot;delete from Employee1 where id = ?&quot;;
+                        PreparedStatement ps3 = con.prepareStatement(deleteQuery);
+
+
+                        ps3.setInt(1, id);
+
+
+                        ps3.executeUpdate();
+
+
+                        System.out.println(&quot;Record Deleted Successfully&quot;);
+                    }
+
+
+                    case 4 -&gt; {
+                        // View the records in the table
+                        System.out.print(&quot;\n----------------------------Employee Table----------------------------\n&quot;);
+                        System.out.print(&quot;\n----------------------------------------------------------------------\n&quot;);
+                        System.out.printf(&quot;%-10s %-20s %-20s %-10s %-10s\n&quot;, &quot;ID&quot;, &quot;Name&quot;, &quot;E-Mail&quot;, &quot;Department&quot;,
+                                &quot;Salary&quot;);
+
+
+                        String viewQuery = &quot;select * from Employee1&quot;;
+                        PreparedStatement ps4 = con.prepareStatement(viewQuery);
+                        ResultSet rs = ps4.executeQuery();
+
+
+                        while (rs.next()) {
+                            System.out.printf(&quot;%-10d %-20s %-20s %-10s %-10f\n&quot;,
+                                    rs.getInt(&quot;id&quot;),
+                                    rs.getString(&quot;name&quot;),
+                                    rs.getString(&quot;email&quot;),
+                                    rs.getString(&quot;dept&quot;),
+                                    rs.getDouble(&quot;salary&quot;));
+
+
+                        }
+                    }
+
+
+                    case 5 -&gt; {
+                        // Exiting the Program
+                        con.close();
+                        System.out.println(&quot;\n(: !!! Exiting the Program !!! :)&quot;);
+                        break mainloop;
+                    }
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        sc.close();
+
+
+    }
+}
+
+
+CREATE TABLE Employee1 (
+id INT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+dept VARCHAR(50),
+salary DOUBLE
+);
+            </code></pre>
+        </section>
+        <section id="assignment-11">
+            <h2>Assignment No. 10 - Student Management</h2>
+            <pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+
+
+public class App {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String url = &quot;jdbc:mysql://localhost:3306/JavaConnection&quot;;
+        String user = &quot;root&quot;;
+        String password = &quot;sohams@2006&quot;;
+
+
+        try {
+            // Connect to MySQL server
+            Connection con = DriverManager.getConnection(url, user, password);
+            mainloop: while (true) {
+                System.out.println(&quot;\n-------Menu-------\n&quot;);
+                System.out.println(&quot;1.Insert\n2.Update\n3.Delete\n4.View\n5.Exit&quot;);
+                System.out.print(&quot;Enter Your Choice : &quot;);
+                int ch = sc.nextInt();
+                switch (ch) {
+                    case 1 -&gt; {
+                        // Inserting values in the Student table
+                        System.out.print(&quot;Enter ID : &quot;);
+                        int ID = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print(&quot;Enter Name : &quot;);
+                        String name = sc.nextLine();
+                        System.out.print(&quot;Enter Course Name : &quot;);
+                        String course = sc.nextLine();
+
+
+                        String insertQuery = &quot;insert into Students1(ID,name,course) values(?,?,?)&quot;;
+                        PreparedStatement ps1 = con.prepareStatement(insertQuery);
+
+
+                        ps1.setInt(1, ID);
+                        ps1.setString(2, name);
+                        ps1.setString(3, course);
+
+
+                        ps1.executeUpdate();
+
+
+                        System.out.println(&quot;Record inserted successfully&quot;);
+                    }
+                    case 2 -&gt; {
+                        System.out.print(&quot;Enter ID to update : &quot;);
+                        int newID = sc.nextInt();
+                        sc.nextLine();
+
+
+                        System.out.print(&quot;Enter new name : &quot;);
+                        String name = sc.nextLine();
+
+
+                        System.out.print(&quot;Enter new course name : &quot;);
+                        String course = sc.nextLine();
+
+
+                        String updateQuery = &quot;update Students1 set name = ?, course = ? where ID = ?&quot;;
+                        PreparedStatement ps2 = con.prepareStatement(updateQuery);
+
+
+                        ps2.setString(1, name);
+                        ps2.setString(2, course);
+                        ps2.setInt(3, newID);
+
+
+                        ps2.executeUpdate();
+
+
+                        System.out.println(&quot;Record Updated Successfully&quot;);
+                    }
+                    case 3 -&gt; {
+                        // Deleting values from the database
+                        System.out.print(&quot;Enter ID to delete from Database : &quot;);
+                        int ID = sc.nextInt();
+
+
+                        String deleteQuery = &quot;delete from Students1 where ID = ?&quot;;
+                        PreparedStatement ps3 = con.prepareStatement(deleteQuery);
+
+
+                        ps3.setInt(1, ID);
+
+
+                        ps3.executeUpdate();
+
+
+                        System.out.println(&quot;Record Deleted Successfully&quot;);
+                    }
+                    case 4 -&gt; {
+                        // Viewing the table
+                        System.out.printf(&quot;%-10s %-10s %-10s\n&quot;, &quot;ID&quot;, &quot;Name&quot;, &quot;course &quot;);
+
+
+                        String viewQuery = &quot;select * from Students1&quot;;
+                        PreparedStatement ps4 = con.prepareStatement(viewQuery);
+                        ResultSet rs = ps4.executeQuery();
+
+
+                        while (rs.next()) {
+                            System.out.printf(&quot;%-10d %-10s %-10s\n&quot;,
+                                    rs.getInt(&quot;id&quot;),
+                                    rs.getString(&quot;name&quot;),
+                                    rs.getString(&quot;course&quot;));
+                        }
+
+
+                    }
+                    case 5 -&gt; {
+                        // Exiting the While loop
+                        con.close();
+                        System.out.println(&quot;(: Exiting the Program :)&quot;);
+                        break mainloop;
+                    }
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        sc.close();
+    }
+}
+
+
+create table Students1(
+id int primary key,
+name varchar(50),
+course varchar(50)
+);
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>
